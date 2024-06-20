@@ -80,7 +80,7 @@ export default function Home() {
               description={
                 <div className='text-hidden'>
                   <p>Keystone Master Season 4</p>
-                  <p>R$ -- ⁰⁰</p>
+                  <p>R$ 250 ⁰⁰</p>
                   <p>Compre o Dragonflight Keystone Master:</p>
                   <p>O que vem neste serviço:</p>
                   <ul>
@@ -100,7 +100,7 @@ export default function Home() {
               description={
                 <div className='text-hidden'>
                   <p>Keystone Master Season 3</p>
-                  <p>R$ -- ⁰⁰</p>
+                  <p>R$ 150 ⁰⁰</p>
                   <p>Compre o Dragonflight Keystone Master:</p>
                   <p>O que vem neste serviço:</p>
                   <ul>
@@ -120,7 +120,7 @@ export default function Home() {
               description={
                 <div className='text-hidden'>
                   <p>Keystone Master Season 3</p>
-                  <p>R$ -- ⁰⁰</p>
+                  <p>R$ 150 ⁰⁰</p>
                   <p>Compre o Dragonflight Keystone Master:</p>
                   <p>O que vem neste serviço:</p>
                   <ul>

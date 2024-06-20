@@ -5,6 +5,9 @@
     margin-top: 10rem;
     height: 800px; /* Ajuste a altura conforme necessário */
   }
+  .about-us-section h2{
+    font-size: 24px;
+  }
   
   .about-us-section img {
     max-width: 40%;

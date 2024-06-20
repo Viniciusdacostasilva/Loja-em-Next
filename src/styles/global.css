@@ -1,0 +1,89 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url("https://blz-contentstack-images.akamaized.net/v3/assets/bltf408a0557f4e4998/blte1aa8777b4151315/653abff479173535608b7d30/wow-11-keyart-en.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: Arial, sans-serif;
+  color: white;
+}
+
+.app {
+  text-align: center;
+  padding-top: 80px;
+  overflow-x: hidden; /* Evitar overflow horizontal */
+  flex: 1; /* Permite que o conteúdo cresça para preencher a altura disponível */
+}
+
+.left-align {
+  text-align: left;
+}
+
+.h2-custom {
+  font-size: 26px;
+  margin-top: 3rem;
+}
+@media (max-width: 768px) {
+  .h2-custom {
+    font-size: 26px;
+    margin-top: 8rem;
+  }
+  .content{
+    margin-top: 2rem;
+  }
+}
+.content {
+  padding-bottom: 100px; /* Adiciona espaço extra para o footer */
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 10rem; /* Espaço grande no topo para telas maiores */
+  gap: 2rem; /* Espaço entre os cartões */
+
+
+}
+  /* Adicionando media query para telas menores */
+  @media (max-width: 768px) {
+    .card-container{
+    flex-wrap: wrap; /* Permite que os cartões quebrem para a próxima linha em telas menores */
+    margin-top: 3rem; /* Espaço menor no topo para telas menores */
+    gap: 1rem; /* Reduz o espaço entre os cartões em telas menores */
+  }
+  }
+/* App.css */
+.section-title {
+  font-size: 2em;
+  text-align: center;
+  margin: 20px 0;
+  color: #ffffff;
+}
+
+.footer {
+  background-color: #000000bd;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  width: 100%;
+  position: relative; /* Altera a posição para relativa */
+}
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 60px; /* Ajusta a posição do botão para ficar acima do rodapé */
+  right: 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  z-index: 2; /* Certifique-se de que o botão tenha um z-index maior que o rodapé */
+}
+
+.scroll-to-top:hover {
+  background-color: #0056b3;
+}

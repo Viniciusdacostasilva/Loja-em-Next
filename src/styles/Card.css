@@ -1,0 +1,88 @@
+.card {
+  position: relative;
+  border-radius: 5px;
+  width: 100%; /* Ocupa toda a largura disponível */
+  max-width: 300px; /* Largura máxima do cartão */
+  height: 350px;
+  overflow: hidden; /* Garante que o conteúdo não saia dos limites do cartão */
+  transition: transform 0.3s ease-in-out;
+  background-color: rgba(0, 0, 0, 0.41);
+  margin: 10px; /* Espaçamento externo */
+}
+
+@media (max-width: 768px) {
+  .card {
+    margin: 10px; /* Espaçamento externo */
+
+  }
+}
+
+  
+  .card-image {
+    width: 100%;
+    height: 275px; /* Defina a altura desejada para a imagem */
+   
+    object-fit: cover; /* Faz com que a imagem se ajuste ao contêiner sem distorção */
+    border-radius: 5px 5px 0 0; /* Bordas arredondadas na parte superior */
+    transition: opacity 0.3s ease-in-out; /* Transição suave para a opacidade */
+  }
+  
+  .card:hover .card-image {
+    opacity: 0; /* Tornar a imagem transparente ao passar o mouse */
+  }
+  
+  .card h2 {
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .card-description {
+    position: absolute;
+    bottom: -100%; /* Inicialmente fora de visão */
+    width: 100%;
+    padding: 20px 0;
+    background-color: rgba(255, 255, 255, 0);
+    transform: translateY(100%);
+    transition: transform 0.3s ease-in-out; /* Transição suave */
+  }
+  
+  .card:hover .card-description {
+    transform: translateY(0); /* Mover para cima ao passar o mouse */
+    bottom: 0;
+  }
+  
+  .card:hover h2 {
+    opacity: 0;
+  }
+  
+  .details-button {
+    display: none; /* Ocultar o botão por padrão */
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .card-description:hover .details-button {
+    display: inline-block; /* Mostrar o botão quando o cartão é hover */
+  }
+  
+  .details-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .card-description ul {
+    padding-left: 40px; /* Ajustar o recuo da lista */
+  }
+  
+  .card-description ul li {
+    margin-left: -20px; /* Ajustar a posição do texto em relação à bolinha */
+    list-style-position: inside; /* Garantir que a bolinha esteja dentro do contêiner da lista */
+  }
+  
+  .text-hidden{
+    padding: 0 20px;
+  }

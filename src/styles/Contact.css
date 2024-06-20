@@ -1,0 +1,35 @@
+.contacts {
+  margin-top: -12rem;
+  padding: 20px;
+  background-color: #f0f0f000;
+}
+
+.contacts h2 {
+  color: #ffffff;
+}
+
+.contacts p {
+  margin-bottom: 10px;
+}
+
+.contact-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-icons a {
+  display: flex;
+  align-items: center; /* Alinha verticalmente */
+  margin: 0 10px; /* Adicione margem entre os ícones */
+  text-decoration: none; /* Remover sublinhado */
+  color: #ffffff; /* Cor do texto */
+}
+
+.contact-icons a:hover {
+  color: #ffffff; /* Cor do texto ao passar o mouse */
+}
+
+.contact-icons a span {
+  margin-left: 5px; /* Adicione espaço entre o ícone e o texto */
+}

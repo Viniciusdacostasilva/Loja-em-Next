@@ -78,7 +78,7 @@ body {
   color: #fff;
   border: none;
   border-radius: 50%;
-  padding: 10px 15px;
+  padding: 15px 15px;
   cursor: pointer;
   transition: background-color 0.3s ease;
   z-index: 2; /* Certifique-se de que o botão tenha um z-index maior que o rodapé */

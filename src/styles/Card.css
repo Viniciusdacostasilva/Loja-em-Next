@@ -1,31 +1,95 @@
+/* global.css */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.app {
+  text-align: center;
+}
+
+.h2-custom {
+  margin: 20px 0;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.contacts-section {
+  padding: 20px;
+}
+
+.contact-methods {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.contact-icon {
+  font-size: 24px;
+  color: #000;
+  text-decoration: none;
+}
+
+.contact-icon.whatsapp:hover {
+  color: #25D366;
+}
+
+.contact-icon.discord:hover {
+  color: #7289da;
+}
+
+/* card.css */
 .card {
   position: relative;
   border-radius: 5px;
-  width: 100%; /* Ocupa toda a largura disponível */
-  max-width: 300px; /* Largura máxima do cartão */
+  width: 100%;
+  max-width: 300px;
   height: 350px;
-  overflow: hidden; /* Garante que o conteúdo não saia dos limites do cartão */
+  overflow: hidden;
   transition: transform 0.3s ease-in-out;
   background-color: rgba(0, 0, 0, 0.41);
-  margin: 10px; /* Espaçamento externo */
+  margin: 10px;
 }
 
 @media (max-width: 768px) {
   .card {
-    margin: 10px; /* Espaçamento externo */
+    margin: 10px;
   }
 }
+
 .card-image {
   width: 100%;
-  height: 275px; /* Defina a altura desejada para a imagem */
+  height: 275px;
   margin-bottom: 20px;
-  object-fit: cover; /* Faz com que a imagem se ajuste ao contêiner sem distorção */
-  border-radius: 5px 5px 0 0; /* Bordas arredondadas na parte superior */
-  transition: opacity 0.3s ease-in-out; /* Transição suave para a opacidade */
+  object-fit: cover;
+  border-radius: 5px 5px 0 0;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .card:hover .card-image {
-  opacity: 0; /* Tornar a imagem transparente ao passar o mouse */
+  opacity: 0;
 }
 
 .card h2 {
@@ -34,16 +98,16 @@
 
 .card-description {
   position: absolute;
-  bottom: -100%; /* Inicialmente fora de visão */
+  bottom: -100%;
   width: 100%;
   padding: 20px 0;
   background-color: rgba(255, 255, 255, 0);
   transform: translateY(100%);
-  transition: transform 0.3s ease-in-out; /* Transição suave */
+  transition: transform 0.3s ease-in-out;
 }
 
 .card:hover .card-description {
-  transform: translateY(0); /* Mover para cima ao passar o mouse */
+  transform: translateY(0);
   bottom: 0;
 }
 
@@ -52,7 +116,7 @@
 }
 
 .details-button {
-  display: none; /* Ocultar o botão por padrão */
+  display: none;
   margin-top: 10px;
   padding: 10px 80px;
   background-color: #007bff;
@@ -64,7 +128,7 @@
 }
 
 .card-description:hover .details-button {
-  display: inline-block; /* Mostrar o botão quando o cartão é hover */
+  display: inline-block;
 }
 
 .details-button:hover {
@@ -72,13 +136,14 @@
 }
 
 .text-hidden ul {
-  padding-left: 40px; /* Ajustar o recuo da lista */
+  padding-left: 40px;
 }
 
 .text-hidden ul li {
-  margin-left: -20px; /* Ajustar a posição do texto em relação à bolinha */
-  list-style-position: inside; /* Garantir que a bolinha esteja dentro do contêiner da lista */
+  margin-left: -20px;
+  list-style-position: inside;
 }
+
 .text-hidden {
   padding: 15px 20px;
 }

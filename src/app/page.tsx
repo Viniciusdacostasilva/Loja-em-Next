@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
@@ -14,63 +14,129 @@ export default function Home() {
   const [showScrollToTop, setShowScrollToTop] = useState(false);
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [headerVisible, setHeaderVisible] = useState(true);
-  const [isVisible, setIsVisible] = useState(false)
-  const divRef = useRef(null)
-  
-  //Controla a visibilidade do header
-  useEffect(() => {
-    const observer = new IntersectionObserver(([entry]) => {
-      // Update our state when observer callback fires
-      setIsVisible(entry.isIntersecting)
-    })
-    const currentDivRef = divRef.current
-    if (currentDivRef) {
-      observer.observe(currentDivRef)
-    }
-    return () => {
-      if (currentDivRef) {
-        observer.unobserve(currentDivRef)
-      }
-    }
-  }, [])
 
-  //Controla o botao de voltar ao topo
-  useEffect(() => {
+  // State para controlar visibilidade do header
+  const [isVisibleHeader, setIsVisibleHeader] = useState(true);
 
+  // State para controlar visibilidade da seção Sobre Nós
+  const [isVisibleAboutUs, setIsVisibleAboutUs] = useState(false);
+  const [hasAnimatedAboutUs, setHasAnimatedAboutUs] = useState(false);
+  const aboutUsRef = useRef<HTMLDivElement>(null);
+
+  // State para controlar visibilidade da seção FAQ
+  const [isVisibleFAQ, setIsVisibleFAQ] = useState(false);
+  const [hasAnimatedFAQ, setHasAnimatedFAQ] = useState(false);
+  const faqRef = useRef<HTMLDivElement>(null);
+
+  // State para controlar visibilidade da seção Contatos
+  const [isVisibleContacts, setIsVisibleContacts] = useState(false);
+  const [hasAnimatedContacts, setHasAnimatedContacts] = useState(false);
+  const contactsRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
     const handleScroll = () => {
-      if (typeof window !== 'undefined') {
-        const currentScrollPos = window.pageYOffset;
+      const currentScrollPos = window.pageYOffset;
+      setPrevScrollPos(currentScrollPos);
+      setShowScrollToTop(currentScrollPos > window.innerHeight / 2);
 
-        setPrevScrollPos(currentScrollPos);
-        setShowScrollToTop(currentScrollPos > window.innerHeight / 2);
-      }
+      // Verificar se estamos nas seções visíveis ou não
+      const isOnAboutUsSection = aboutUsRef.current && aboutUsRef.current.getBoundingClientRect().top <= window.innerHeight / 2;
+      const isOnFAQSection = faqRef.current && faqRef.current.getBoundingClientRect().top <= window.innerHeight / 2;
+      const isOnContactsSection = contactsRef.current && contactsRef.current.getBoundingClientRect().top <= window.innerHeight / 2;
+
+      setIsVisibleHeader(!isOnAboutUsSection && !isOnFAQSection && !isOnContactsSection);
     };
 
     // Adicionar evento de scroll ao carregar o componente
-    if (typeof window !== 'undefined') {
-      window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll);
 
-      return () => {
-        window.removeEventListener('scroll', handleScroll);
-      };
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [prevScrollPos]);
 
-    }
-  }, [prevScrollPos])
-
+  // Função para animar o scroll ao topo da página
   const scrollToTop = () => {
-    if (typeof window !== 'undefined') {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth',
-      });
-    }
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
   };
+
+  // Configurar IntersectionObserver para a seção Sobre Nós
+  useEffect(() => {
+    const observerAboutUs = new IntersectionObserver(([entry]) => {
+      const isVisible = entry.isIntersecting;
+      setIsVisibleAboutUs(isVisible);
+      if (isVisible && !hasAnimatedAboutUs) {
+        setHasAnimatedAboutUs(true);
+      }
+    }, {
+      threshold: 0.1 // Reduzir o threshold para melhorar a detecção
+    });
+
+    if (aboutUsRef.current) {
+      observerAboutUs.observe(aboutUsRef.current);
+    }
+
+    return () => {
+      if (aboutUsRef.current) {
+        observerAboutUs.unobserve(aboutUsRef.current);
+      }
+    };
+  }, [hasAnimatedAboutUs]);
+
+  // Configurar IntersectionObserver para a seção FAQ
+  useEffect(() => {
+    const observerFAQ = new IntersectionObserver(([entry]) => {
+      const isVisible = entry.isIntersecting;
+      setIsVisibleFAQ(isVisible);
+      if (isVisible && !hasAnimatedFAQ) {
+        setHasAnimatedFAQ(true);
+      }
+    }, {
+      threshold: 0.1 // Reduzir o threshold para melhorar a detecção
+    });
+
+    if (faqRef.current) {
+      observerFAQ.observe(faqRef.current);
+    }
+
+    return () => {
+      if (faqRef.current) {
+        observerFAQ.unobserve(faqRef.current);
+      }
+    };
+  }, [hasAnimatedFAQ]);
+
+  // Configurar IntersectionObserver para a seção Contatos
+  useEffect(() => {
+    const observerContacts = new IntersectionObserver(([entry]) => {
+      const isVisible = entry.isIntersecting;
+      setIsVisibleContacts(isVisible);
+      if (isVisible && !hasAnimatedContacts) {
+        setHasAnimatedContacts(true);
+      }
+    }, {
+      threshold: 0.1 // Reduzir o threshold para melhorar a detecção
+    });
+
+    if (contactsRef.current) {
+      observerContacts.observe(contactsRef.current);
+    }
+
+    return () => {
+      if (contactsRef.current) {
+        observerContacts.unobserve(contactsRef.current);
+      }
+    };
+  }, [hasAnimatedContacts]);
 
   return (
     <div className="app">
       {/* Passando a prop `visible` para o Header com animação */}
-      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.6 }}>
-        <Header visible={isVisible} />
+      <motion.div initial={{ opacity: 0 }} animate={{ opacity: isVisibleHeader ? 1 : 0 }} transition={{ duration: 0.6 }}>
+        <Header visible={isVisibleHeader} />
       </motion.div>
 
       <div className="content">
@@ -82,10 +148,9 @@ export default function Home() {
         >
           Serviços
         </motion.h2>
-        <div className="card-container" id="content" ref={divRef}
-        >
+        <div className="card-container" id="content">
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 0.2 }}>
-            <Card
+          <Card
               title="KSM"
               description={
                 <div className='text-hidden'>
@@ -146,16 +211,37 @@ export default function Home() {
           </motion.div>
         </div>
 
-        <motion.div initial={{ x: 200, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 0.8 }}>
-          <AboutUsSection id="about-us" />
+        {/* Seção Sobre Nós */}
+        <motion.div
+          id="about-us"
+          ref={aboutUsRef}
+          initial={{ x: 200, opacity: 0 }}
+          animate={{ x: hasAnimatedAboutUs ? 0 : 200, opacity: hasAnimatedAboutUs ? 1 : 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <AboutUsSection />
         </motion.div>
 
-        <motion.div initial={{ x: 200, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 0.8 }}>
+        {/* Seção FAQ */}
+        <motion.div
+          id="faq"
+          ref={faqRef}
+          initial={{ x: -200, opacity: 0 }}
+          animate={{ x: hasAnimatedFAQ ? 0 : -200, opacity: hasAnimatedFAQ ? 1 : 0 }}
+          transition={{ duration: 0.8 }}
+        >
           <FAQSection />
         </motion.div>
 
-        <motion.section initial={{ x: -200, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 0.8 }}>
-          <div id="contacts" className="contacts">
+      {/* Seção Contatos */}
+      <motion.section
+          id='contacts'
+          ref={contactsRef}
+          initial={{ x: -200, opacity: 0 }}
+          animate={{ x: hasAnimatedContacts ? 0 : -200, opacity: hasAnimatedContacts ? 1 : 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <div className="contacts">
             <h2>Contatos</h2>
             <p>Entre em contato conosco pelos seguintes meios:</p>
             <div className="contact-icons">
@@ -172,12 +258,14 @@ export default function Home() {
         </motion.section>
       </div>
 
-      <motion.footer initial={{ y: 200, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.8 }}>
+     {/* Footer */}
+     <motion.footer initial={{ y: 200, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.8 }}>
         <footer className="footer">
           &copy; {new Date().getFullYear()} End Gear Services. Todos os direitos reservados.
         </footer>
       </motion.footer>
 
+      {/* Botão de voltar ao topo */}
       {showScrollToTop && (
         <motion.button
           initial={{ scale: 0 }}

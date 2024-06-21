@@ -1,5 +1,3 @@
-// components/FAQSection.tsx
-
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import '../styles/FAQSection.css';
@@ -10,8 +8,13 @@ const FAQSection: React.FC = () => {
   const faqData = [
     {
       question: 'Como funciona o site?',
-      answer:
-        'Atualmente, o nosso site opera mais como um catálogo que é frequentemente atualizado. Aqui, você pode se informar sobre os serviços que oferecemos. Se você estiver interessado em comprar algum serviço, basta entrar em contato via Discord ou WhatsApp. Também oferecemos alguns serviços personalizados e pacotes que variam de acordo com as semanas e as necessidades dos clientes. Entre em contato para obter mais informações.',
+      answer: (
+        <>
+          Atualmente, o nosso site opera mais como um catálogo que é frequentemente atualizado. Aqui, você pode se informar sobre os serviços que oferecemos. Se você estiver interessado em comprar algum serviço, basta entrar em contato via{' '}
+          <a href="https://discord.gg/pT3m2fDj34" target="_blank" className="text-blue-500">Discord</a> ou{' '}
+          <a href="https://api.whatsapp.com/send?phone=558893681089" target="_blank" className="text-green-500">WhatsApp</a>. Também oferecemos alguns serviços personalizados e pacotes que variam de acordo com as semanas e as necessidades dos clientes. Entre em contato para obter mais informações.
+        </>
+      ),
     },
     {
       question: 'Como funciona o serviço de Boosting no WoW?',

@@ -1,0 +1,74 @@
+/* styles/FAQSection.module.css */
+
+.faq-section {
+  margin-top: 40px;
+  height: 800px;
+}
+
+.duvida h2 {
+  font-size: 24px;
+  position: relative;
+  margin-left: 2rem;
+  margin-bottom: 2rem;
+  text-align: left;
+  color: yellow;
+  font-weight: 800;
+}
+
+.faq-questions {
+  display: flex;
+  flex-direction: column;
+}
+
+.faq-question {
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  text-align: left;
+  background-color: #00000087; /* Fundo padrão para as perguntas */
+}
+
+.faq-question h2 {
+  font-size: 20px; /* Tamanho de fonte para os títulos das perguntas */
+  margin-bottom: 10px;
+ 
+}
+
+.faq-question p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Estilos para um layout de faq responsivo */
+@media (min-width: 768px) {
+  .faq-question {
+    padding: 25px; /* Aumentando o padding para telas maiores */
+  }
+}
+
+@media(max-width:768px){
+  .faq-section {
+    margin-top: -10rem;
+    height: 800px;
+  }
+  .duvida h2 {
+    font-size: 20px;
+    position: relative;
+    margin-left: 2rem;
+    margin-bottom: 2rem;
+    text-align: left;
+    color: yellow;
+    font-weight: 800;
+  }
+  .faq-question h2 {
+    font-size: 16px; /* Tamanho de fonte para os títulos das perguntas */
+    margin-bottom: 10px;
+   
+  }
+  
+  .faq-question p {
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+}

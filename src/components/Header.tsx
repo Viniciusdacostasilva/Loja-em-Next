@@ -34,6 +34,7 @@ function Header({ visible }: any) {
           </div>
           <div className="header-right">
             <button onClick={() => scrollToSection('about-us')}>Sobre nós</button>
+            <button onClick={() => scrollToSection('faq')}>FAQ</button>
             <button onClick={() => scrollToSection('contacts')}>Contatos</button>
             <button className="login-button" onClick={handleLoginClick}>
               Logar
@@ -46,6 +47,7 @@ function Header({ visible }: any) {
       </div>
       <div className={`header-mobile-menu ${menuOpen ? 'open' : ''}`}>
         <button onClick={() => scrollToSection('about-us')}>Sobre nós</button>
+        <button onClick={() => scrollToSection('faq')}>FAQ</button>
         <button onClick={() => scrollToSection('contacts')}>Contatos</button>
         <button className="login-button" onClick={handleLoginClick}>
           Logar

@@ -1,52 +1,62 @@
 "use client"
-import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion'; // Importar motion do framer-motion
+
+import React, { useState, useEffect, useRef } from 'react';
+import { motion } from 'framer-motion';
 import Header from '../components/Header';
 import Card from '../components/Card';
 import AboutUsSection from '../components/AboutUsSection';
 import { FaArrowUp, FaWhatsapp, FaDiscord } from 'react-icons/fa';
 import '../styles/global.css';
 import '../styles/Contact.css';
+import FAQSection from '../components/FAQSection';
 
 export default function Home() {
   const [showScrollToTop, setShowScrollToTop] = useState(false);
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [headerVisible, setHeaderVisible] = useState(true);
-
+  const [isVisible, setIsVisible] = useState(false)
+  const divRef = useRef(null)
+  
+  //Controla a visibilidade do header
   useEffect(() => {
+    const observer = new IntersectionObserver(([entry]) => {
+      // Update our state when observer callback fires
+      setIsVisible(entry.isIntersecting)
+    })
+    const currentDivRef = divRef.current
+    if (currentDivRef) {
+      observer.observe(currentDivRef)
+    }
+    return () => {
+      if (currentDivRef) {
+        observer.unobserve(currentDivRef)
+      }
+    }
+  }, [])
+
+  //Controla o botao de voltar ao topo
+  useEffect(() => {
+
     const handleScroll = () => {
       if (typeof window !== 'undefined') {
         const currentScrollPos = window.pageYOffset;
-        const isScrollingDown = currentScrollPos > prevScrollPos;
-  
-        // Ocultar o header se estiver descendo
-        if (isScrollingDown && headerVisible) {
-          setHeaderVisible(false);
-        }
-  
-        // Mostrar o header se estiver subindo e passar do ponto dos cartões
-        const cardSectionTop = document.getElementById('about-us')?.offsetTop || 0;
-        const isPastCardSection = currentScrollPos > cardSectionTop || currentScrollPos === 0; // Mostrar quando voltar ao topo
-  
-        if (!isScrollingDown && isPastCardSection && !headerVisible) {
-          setHeaderVisible(true);
-        }
-  
+
         setPrevScrollPos(currentScrollPos);
         setShowScrollToTop(currentScrollPos > window.innerHeight / 2);
       }
     };
-  
+
     // Adicionar evento de scroll ao carregar o componente
     if (typeof window !== 'undefined') {
       window.addEventListener('scroll', handleScroll);
-  
+
       return () => {
         window.removeEventListener('scroll', handleScroll);
       };
+
     }
-  }, [prevScrollPos, headerVisible]);
-  
+  }, [prevScrollPos])
+
   const scrollToTop = () => {
     if (typeof window !== 'undefined') {
       window.scrollTo({
@@ -55,25 +65,25 @@ export default function Home() {
       });
     }
   };
-  
 
   return (
     <div className="app">
       {/* Passando a prop `visible` para o Header com animação */}
       <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.6 }}>
-        <Header visible={headerVisible} />
+        <Header visible={isVisible} />
       </motion.div>
 
       <div className="content">
-      <motion.h2
-        className="h2-custom" // Adicione a classe aqui
-        initial={{ x: -200, opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
-        transition={{ duration: 0.8 }}
-      >
-        Serviços
-      </motion.h2>
-        <div className="card-container">
+        <motion.h2
+          className="h2-custom"
+          initial={{ x: -200, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.8 }}
+        >
+          Serviços
+        </motion.h2>
+        <div className="card-container" id="content" ref={divRef}
+        >
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 0.2 }}>
             <Card
               title="KSM"
@@ -138,6 +148,10 @@ export default function Home() {
 
         <motion.div initial={{ x: 200, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 0.8 }}>
           <AboutUsSection id="about-us" />
+        </motion.div>
+
+        <motion.div initial={{ x: 200, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 0.8 }}>
+          <FAQSection />
         </motion.div>
 
         <motion.section initial={{ x: -200, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 0.8 }}>

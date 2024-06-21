@@ -27,7 +27,7 @@ body {
 @media (max-width: 768px) {
   .h2-custom {
     font-size: 26px;
-    margin-top: 8rem;
+    margin-top: 6rem;
   }
   .content{
     margin-top: 2rem;

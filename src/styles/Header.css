@@ -22,7 +22,15 @@
 }
 
 .header-left {
-  margin-left: 5rem; /* Ajuste o espaçamento à esquerda */
+  display: flex;
+  align-items: center;
+  margin-left: 5rem;
+}
+
+.header-icon {
+  width: 32px;
+  height: 32px;
+  margin-right: 8px;
 }
 
 .header-title {
@@ -33,7 +41,7 @@
 .header-right {
   display: flex;
   gap: 10px;
-  margin-right: 3rem; /* Ajuste o espaçamento à direita */
+  margin-right: 3rem;
 }
 
 .header-right button {
@@ -44,48 +52,66 @@
   font-size: 16px;
   padding: 8px 16px;
   border-radius: 5px;
-  transition: opacity 0.3s ease; /* Adiciona a transição de opacidade */
+  transition: opacity 0.3s ease;
 }
 
-.loginButton {
+.login-button {
   padding: 8px 16px;
   border-radius: 5px;
-  transition: opacity 0.3s ease; /* Adiciona a transição de opacidade */
+  transition: opacity 0.3s ease;
 }
 
 .header-right button:hover,
-.loginButton:hover {
-  opacity: 0.6; /* Reduz a opacidade ao passar o mouse */
+.login-button:hover {
+  opacity: 0.6;
+}
+
+.header-menu-icon {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+  margin-right: 1rem;
+}
+
+.header-mobile-menu {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  background-color: #000000b3;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+
+.header-mobile-menu button {
+  margin: 10px 0;
+}
+
+.header-mobile-menu.open {
+  display: flex;
+  max-height: 500px;
+  margin-top: -0.29rem;
 }
 
 @media (max-width: 768px) {
   .header-container {
-    flex-direction: column; /* Alinha itens verticalmente */
-    align-items: center; /* Centraliza horizontalmente */
-    text-align: center; /* Centraliza o texto */
-    padding: 10px; /* Adiciona um espaçamento interno */
+    flex-direction: row;
+    justify-content: space-between;
   }
 
   .header-right {
-    margin-top: -2.16rem;
-    margin-right: -9rem;
-    gap: 5px;
-}
-  .header-right button {
-    background: none;
-    border: none;
-    color: white;
-    cursor: pointer;
-    font-size: 16px;
-    padding: 8px 3px;
-    border-radius: 5px;
-    transition: opacity 0.3s ease;
+    display: none;
   }
-  .header-title {
-    font-size: 22px;
-    margin: 0;
+
+  .header-menu-icon {
+    display: block;
   }
-  .header-left{
-    margin-left: -14rem;
+
+  .header-mobile-menu {
+    display: flex;
+    max-height: 0;
+  }
+
+  .header-left {
+    margin-left: 1rem;
   }
 }

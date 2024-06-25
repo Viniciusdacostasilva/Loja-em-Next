@@ -134,7 +134,9 @@ export default function Home() {
 
   return (
     <div className="app">
+
       {/* Passando a prop `visible` para o Header com animação */}
+
       <motion.div initial={{ opacity: 0 }} animate={{ opacity: isVisibleHeader ? 1 : 0 }} transition={{ duration: 0.6 }}>
         <Header visible={isVisibleHeader} />
       </motion.div>
@@ -150,7 +152,7 @@ export default function Home() {
         </motion.h2>
         <div className="card-container" id="content">
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 0.2 }}>
-          <Card
+            <Card
               title="KSM"
               description={
                 <div className='text-hidden'>
@@ -211,6 +213,7 @@ export default function Home() {
           </motion.div>
         </div>
 
+
         {/* Seção Sobre Nós */}
         <motion.div
           id="about-us"
@@ -233,8 +236,8 @@ export default function Home() {
           <FAQSection />
         </motion.div>
 
-      {/* Seção Contatos */}
-      <motion.section
+        {/* Seção Contatos */}
+        <motion.section
           id='contacts'
           ref={contactsRef}
           initial={{ x: -200, opacity: 0 }}
@@ -246,11 +249,11 @@ export default function Home() {
             <p>Entre em contato conosco pelos seguintes meios:</p>
             <div className="contact-icons">
               <a href="https://api.whatsapp.com/send?phone=557799237302" target="_blank" rel="noopener noreferrer">
-                <FaWhatsapp />
+                <FaWhatsapp className='icones' color='lime'/>
                 <span>WhatsApp</span>
               </a>
               <a href="https://discord.gg/pT3m2fDj34" target="_blank" rel="noopener noreferrer">
-                <FaDiscord />
+                <FaDiscord className='icones' color='#00a5ff'/>
                 <span>Discord</span>
               </a>
             </div>
@@ -258,8 +261,8 @@ export default function Home() {
         </motion.section>
       </div>
 
-     {/* Footer */}
-     <motion.footer initial={{ y: 200, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.8 }}>
+      {/* Footer */}
+      <motion.footer initial={{ y: 200, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.8 }}>
         <footer className="footer">
           &copy; {new Date().getFullYear()} End Gear Services. Todos os direitos reservados.
         </footer>

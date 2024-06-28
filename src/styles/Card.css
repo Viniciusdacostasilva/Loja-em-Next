@@ -137,13 +137,17 @@ body {
 
 .text-hidden ul {
   padding-left: 40px;
+  text-align: left;
 }
 
 .text-hidden ul li {
   margin-left: -20px;
-  list-style-position: inside;
+  list-style-type: circle !important;
 }
 
 .text-hidden {
-  padding: 15px 20px;
+  padding: 28px 20px;
+}
+.text-hidden p{
+  margin-bottom: 10px;
 }

@@ -156,14 +156,13 @@ export default function Home() {
               title="KSM"
               description={
                 <div className='text-hidden'>
-                  <p>Keystone Master Season 4</p>
+                  <p>Keystone Master Season 1</p>
                   <p>R$ 250 ⁰⁰</p>
-                  <p>Compre o Dragonflight Keystone Master:</p>
                   <p>O que vem neste serviço:</p>
                   <ul>
-                    <li>Total de 12 pedras M+16</li>
-                    <li>Gear 463 no fim da dungeon</li>
-                    <li>Gear 476 no bau semanal</li>
+                    <li>Total de 12 pedras M+7</li>
+                    <li>Gear '' no fim da dungeon</li>
+                    <li>Gear '' no bau semanal</li>
                     <li>Montaria da Season</li>
                   </ul>
                 </div>
@@ -176,14 +175,13 @@ export default function Home() {
               title="M+ 10"
               description={
                 <div className='text-hidden'>
-                  <p>Keystone Master Season 3</p>
+                  <p>M+10</p>
                   <p>R$ 150 ⁰⁰</p>
-                  <p>Compre o Dragonflight Keystone Master:</p>
                   <p>O que vem neste serviço:</p>
                   <ul>
-                    <li>Total de 12 pedras M+16</li>
-                    <li>Gear 463 no fim da dungeon</li>
-                    <li>Gear 476 no bau semanal</li>
+                    <li>Total de 12 pedras M+7</li>
+                    <li>Gear '' no fim da dungeon</li>
+                    <li>Gear '' no bau semanal</li>
                     <li>Montaria da Season</li>
                   </ul>
                 </div>
@@ -195,15 +193,14 @@ export default function Home() {
             <Card
               title="M+ 8"
               description={
-                <div className='text-hidden'>
-                  <p>Keystone Master Season 3</p>
-                  <p>R$ 150 ⁰⁰</p>
-                  <p>Compre o Dragonflight Keystone Master:</p>
+                <div className="text-hidden">
+                  <p>M+ 7</p>
+                  <p>R$ 25 ⁰⁰</p>
                   <p>O que vem neste serviço:</p>
-                  <ul>
-                    <li>Total de 12 pedras M+16</li>
-                    <li>Gear 463 no fim da dungeon</li>
-                    <li>Gear 476 no bau semanal</li>
+                  <ul className="list-disc pl-5 space-y-1">
+                    <li>Total de 12 pedras M+7</li>
+                    <li>Gear '' no fim da dungeon</li>
+                    <li>Gear '' no bau semanal</li>
                     <li>Montaria da Season</li>
                   </ul>
                 </div>
@@ -249,11 +246,11 @@ export default function Home() {
             <p>Entre em contato conosco pelos seguintes meios:</p>
             <div className="contact-icons">
               <a href="https://api.whatsapp.com/send?phone=557799237302" target="_blank" rel="noopener noreferrer">
-                <FaWhatsapp className='icones' color='lime'/>
+                <FaWhatsapp className='icones' color='lime' />
                 <span>WhatsApp</span>
               </a>
               <a href="https://discord.gg/pT3m2fDj34" target="_blank" rel="noopener noreferrer">
-                <FaDiscord className='icones' color='#00a5ff'/>
+                <FaDiscord className='icones' color='#00a5ff' />
                 <span>Discord</span>
               </a>
             </div>

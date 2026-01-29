@@ -1,0 +1,30 @@
+/* AboutUsSection.css */
+
+.about-us-section {
+  text-align: center;
+  margin-top: 7rem;
+  height: 800px; /* Ajuste a altura conforme necessário */
+}
+.about-us-section h2 {
+  font-size: 24px;
+}
+.about-us-section p {
+  padding: 15px 9rem;
+}
+.about-us-section img {
+  max-width: 40%;
+  height: auto;
+}
+@media (max-width: 768px) {
+  .about-us-section img {
+    max-width: 80%;
+    height: auto;
+  }
+  h2 {
+    margin-right: 0rem;
+  }
+  .about-us-section p {
+    padding: 0 20px;
+    font-size: 12px;
+  }
+}

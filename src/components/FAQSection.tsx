@@ -1,7 +1,7 @@
 "use client"
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaChevronDown } from 'react-icons/fa';
+import { FaChevronDown, FaQuestionCircle } from 'react-icons/fa';
 import '../styles/FAQSection.css';
 
 const FAQSection: React.FC = () => {
@@ -47,7 +47,10 @@ const FAQSection: React.FC = () => {
   return (
     <section id="faq" className="faq-section">
       <div className="duvida">
-        <h2>Dúvidas Frequentes</h2>
+        <h2 style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+          <FaQuestionCircle style={{ opacity: 0.5 }} />
+          Dúvidas Frequentes
+        </h2>
       </div>
       <div className="faq-questions">
         {faqData.map((item, index) => (

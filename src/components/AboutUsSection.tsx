@@ -5,10 +5,15 @@ import '../styles/AboutUsSection.css';
 import Image from 'next/image';
 import aboutImg from '../img/about.jpg'; // Certifique-se de que o caminho está correto
 
+import { FaUsers } from 'react-icons/fa';
+
 function AboutUsSection({id}:any) {
   return (
     <div id="about-us" className="about-us-section">
-      <h2>Sobre nós</h2>
+      <h2 style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px' }}>
+        <FaUsers style={{ opacity: 0.5 }} />
+        Sobre nós
+      </h2>
       <div className="theater-mode-container">
         <Image 
           src={aboutImg} 

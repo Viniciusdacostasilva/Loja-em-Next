@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import Header from '../components/Header';
 import Card from '../components/Card';
 import AboutUsSection from '../components/AboutUsSection';
-import { FaArrowUp, FaWhatsapp, FaDiscord } from 'react-icons/fa';
+import { FaArrowUp, FaWhatsapp, FaDiscord, FaRegAddressBook, FaGamepad } from 'react-icons/fa';
 import '../styles/global.css';
 import '../styles/Contact.css';
 import FAQSection from '../components/FAQSection';
@@ -149,7 +149,9 @@ export default function Home() {
           initial={{ x: -200, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.8 }}
+          style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px' }}
         >
+          <FaGamepad style={{ opacity: 0.5 }} />
           Serviços
         </motion.h2>
         <div className="card-container" id="content">
@@ -244,7 +246,10 @@ export default function Home() {
           transition={{ duration: 0.8 }}
         >
           <div className="contacts">
-            <h2>Contatos</h2>
+            <h2 style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px' }}>
+              <FaRegAddressBook style={{ opacity: 0.5 }} />
+              Contatos
+            </h2>
             <p>Entre em contato conosco pelos seguintes meios:</p>
             <div className="contact-icons">
               <a href="https://api.whatsapp.com/send?phone=557799237302" target="_blank" rel="noopener noreferrer">

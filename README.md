@@ -1,36 +1,60 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# End Gear - Game Services E-commerce
 
-## Getting Started
+**End Gear** is a premium e-commerce platform dedicated to providing high-performance boosting and coaching services for online games, specifically World of Warcraft. Built with modern web technologies, it delivers a dynamic and immersive user experience.
 
-First, run the development server:
+![Project Banner](public/next.svg) *<!-- Replace with a real screenshot if available -->*
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🚀 About the Project
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+This project is a landing page and service storefront designed to attract gamers seeking to elevate their gameplay. It features a dark, cinematic aesthetic inspired by gaming culture ("End Game" gear), utilizing advanced CSS techniques and fluid animations to create a premium feel.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Key Features
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+*   **Premium UI/UX**:
+    *   **Glassmorphism**: Sleek, semi-transparent card designs with neon glow effects.
+    *   **Theater Mode**: A cinematic "About Us" section that highlights visual storytelling with interactive hover effects.
+    *   **Fluid Animations**: Powered by **Framer Motion**, elements scale, fade, and interact smoothly with user input.
+*   **Service Cards**: Interactive cards that showcase boosting services (e.g., Mythic+, Raids) with detailed descriptions and call-to-action buttons.
+*   **Organized FAQ**: A clean, accessible FAQ section to address common customer questions.
+*   **Responsive Design**: Fully optimized for desktops, tablets, and mobile devices.
 
-## Learn More
+## 🛠️ Tech Stack
 
-To learn more about Next.js, take a look at the following resources:
+This project is built using the latest modern web development stack:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+*   **[Next.js 16](https://nextjs.org/)** - The React Framework for the Web.
+*   **[TypeScript](https://www.typescriptlang.org/)** - For type-safe, robust code.
+*   **[Framer Motion](https://www.framer.com/motion/)** - For production-ready animations.
+*   **CSS Modules** - For focused, modular styling without conflicts.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## 📦 Getting Started
 
-## Deploy on Vercel
+To run this project locally on your machine, follow these steps:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1.  **Clone the repository**:
+    ```bash
+    git clone https://github.com/Viniciusdacostasilva/Loja-em-Next.git
+    cd Loja-em-Next
+    ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+2.  **Install dependencies**:
+    ```bash
+    npm install
+    # or
+    yarn install
+    ```
+
+3.  **Run the development server**:
+    ```bash
+    npm run dev
+    ```
+
+4.  **Open your browser**:
+    Navigate to [http://localhost:3000](http://localhost:3000) to see the application running.
+
+## 🤝 Contact & Support
+
+If you have any questions or need support regarding the services, check the "Contatos" section on the website or reach out via our Discord/WhatsApp integration.
+
+---
+*Developed with 💜 by Vinicius*

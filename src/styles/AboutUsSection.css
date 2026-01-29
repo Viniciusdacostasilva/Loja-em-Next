@@ -2,9 +2,9 @@
 
 .about-us-section {
   text-align: center;
-  margin-top: 15rem;
-  margin-bottom: 5rem; /* Push FAQ down */
-  min-height: auto; /* Remove fixed height constraint */
+  margin-top: 10rem; /* Adjusted spacing */
+  margin-bottom: 8rem; /* Significant bottom margin to prevent overlap */
+  min-height: auto;
 }
 
 .about-us-section h2 {
@@ -15,14 +15,15 @@
 }
 
 .about-us-section p {
-  padding: 15px 0; /* Remove side padding constraint from box */
+  padding: 0;
   font-size: 1.2rem;
   line-height: 1.8;
   color: #fff;
   text-shadow: 0 1px 3px rgba(0,0,0,0.9);
-  /* Removed background and border-radius */
   margin: 0 auto;
-  max-width: 900px; /* Slightly tighter for readability */
+  width: 90%; /* Exact match to theater-mode-container */
+  max-width: 1000px; /* Exact match to image container */
+  text-align: justify;
 }
 
 /* Theater Mode Styles */

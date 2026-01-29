@@ -57,4 +57,3 @@ To run this project locally on your machine, follow these steps:
 If you have any questions or need support regarding the services, check the "Contatos" section on the website or reach out via our Discord/WhatsApp integration.
 
 ---
-*Developed with 💜 by Vinicius*

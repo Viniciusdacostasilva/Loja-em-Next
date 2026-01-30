@@ -1,7 +1,7 @@
 /* styles/FAQSection.module.css */
 
 .faq-section {
-  margin-top: 5rem; /* Positive margin to ensure spacing */
+  margin-top: 0; /* Positive margin to ensure spacing */
   height: auto;
   padding-bottom: 5rem;
 }
@@ -67,7 +67,7 @@
 
 @media(max-width:768px){
   .faq-section {
-    margin-top: 5rem;
+    margin-top: 0;
     height: auto;
   }
   .duvida h2 {

@@ -45,7 +45,7 @@ const FAQSection: React.FC = () => {
   };
 
   return (
-    <section id="faq" className="faq-section">
+    <section className="faq-section">
       <div className="duvida">
         <h2 style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
           <FaQuestionCircle style={{ opacity: 0.5 }} />

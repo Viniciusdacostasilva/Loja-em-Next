@@ -9,7 +9,7 @@ import { FaUsers } from 'react-icons/fa';
 
 function AboutUsSection({id}:any) {
   return (
-    <div id="about-us" className="about-us-section">
+    <div className="about-us-section">
       <h2 style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px' }}>
         <FaUsers style={{ opacity: 0.5 }} />
         Sobre nós

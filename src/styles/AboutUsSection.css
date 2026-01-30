@@ -2,7 +2,7 @@
 
 .about-us-section {
   text-align: center;
-  margin-top: 10rem; /* Adjusted spacing */
+  margin-top: 0; /* Adjusted spacing */
   margin-bottom: 8rem; /* Significant bottom margin to prevent overlap */
   min-height: auto;
 }
@@ -15,22 +15,40 @@
 }
 
 .about-us-section p {
-  padding: 0;
+  padding: 2rem;
   font-size: 1.2rem;
   line-height: 1.8;
   color: #fff;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.9);
+  text-shadow: 0 1px 3px rgba(0,0,0,0.5);
   margin: 0 auto;
-  width: 90%; /* Exact match to theater-mode-container */
-  max-width: 1000px; /* Exact match to image container */
+  width: 90%; 
+  max-width: 1200px;
   text-align: justify;
+  
+  /* Glassmorphism Effect */
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.about-us-section p:hover {
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(168, 85, 247, 0.2); /* Purple hint */
+  border-color: rgba(168, 85, 247, 0.3);
+  transform: translateY(-2px);
 }
 
 /* Theater Mode Styles */
 .theater-mode-container {
   position: relative;
   width: 90%;
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto 2rem auto;
   aspect-ratio: 21 / 9; /* Cinematic Aspect Ratio */
   border-radius: 12px;

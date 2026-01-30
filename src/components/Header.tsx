@@ -10,11 +10,9 @@ function Header({ visible }: any) {
 
   const scrollToSection = (sectionId: any) => {
     const section = document.getElementById(sectionId);
+    
     if (section) {
-      window.scrollTo({
-        top: section.offsetTop,
-        behavior: 'smooth'
-      });
+      section.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
@@ -38,9 +36,6 @@ function Header({ visible }: any) {
             <button onClick={() => scrollToSection('about-us')}>Sobre nós</button>
             <button onClick={() => scrollToSection('faq')}>FAQ</button>
             <button onClick={() => scrollToSection('contacts')}>Contatos</button>
-            <button className="login-button" onClick={handleLoginClick}>
-              Logar
-            </button>
           </div>
           <div className="header-menu-icon" onClick={toggleMenu}>
             {menuOpen ? <FaTimes /> : <FaBars />}
@@ -51,9 +46,6 @@ function Header({ visible }: any) {
         <button onClick={() => scrollToSection('about-us')}>Sobre nós</button>
         <button onClick={() => scrollToSection('faq')}>FAQ</button>
         <button onClick={() => scrollToSection('contacts')}>Contatos</button>
-        <button className="login-button" onClick={handleLoginClick}>
-          Logar
-        </button>
       </div>
     </div>
   );

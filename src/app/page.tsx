@@ -143,126 +143,137 @@ export default function Home() {
         <Header visible={isVisibleHeader} />
       </motion.div>
 
-      <div className="content">
-        <motion.h2
-          className="h2-custom"
-          initial={{ x: -200, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.8 }}
-          style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px' }}
-        >
-          <FaGamepad style={{ opacity: 0.5 }} />
-          Serviços
-        </motion.h2>
-        <div className="card-container" id="content">
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 0.2 }}>
-            <Card
-              title="KSM"
-              description={
-                <div className="text-hidden">
-                  <p>Keystone Master Season 1</p>
-                  <p>R$ 250 ⁰⁰</p>
-                  <p>O que vem neste serviço:</p>
-                  <ul>
-                    <li>Total de 12 pedras M+7</li>
-                    <li>Gear no fim da dungeon</li>
-                    <li>Gear no bau semanal</li>
-                    <li>Montaria da Season</li>
-                  </ul>
-                </div>
-              }
-              imageUrl={cardImage.src}
-            />
-          </motion.div>
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 0.4 }}>
-            <Card
-              title="M+ 10"
-              description={
-                <div className="text-hidden">
-                  <p>M+10</p>
-                  <p>R$ 150 ⁰⁰</p>
-                  <p>O que vem neste serviço:</p>
-                  <ul>
-                    <li>Total de 12 pedras M+7</li>
-                    <li>Gear no fim da dungeon</li>
-                    <li>Gear no bau semanal</li>
-                    <li>Montaria da Season</li>
-                  </ul>
-                </div>
-              }
-              imageUrl={cardImage.src}
-            />
-          </motion.div>
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 0.6 }}>
-            <Card
-              title="M+ 8"
-              description={
-                <div className="text-hidden">
-                  <p>M+ 7</p>
-                  <p>R$ 25 ⁰⁰</p>
-                  <p>O que vem neste serviço:</p>
-                  <ul className="list-disc pl-5 space-y-1">
-                    <li>Total de 12 pedras M+7</li>
-                    <li>Gear no fim da dungeon</li>
-                    <li>Gear no bau semanal</li>
-                    <li>Montaria da Season</li>
-                  </ul>
-                </div>
-              }
-              imageUrl={cardImage.src}
-            />
-          </motion.div>
-        </div>
+      <div className="content" style={{ paddingBottom: 0 }}>
+        {/* Seção Serviços */}
+        <section className="section-bg services-bg">
+          <div className="bg-overlay">
+            <motion.h2
+              className="h2-custom"
+              initial={{ x: -200, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.8 }}
+              style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px' }}
+            >
+              <FaGamepad style={{ opacity: 0.5 }} />
+              Serviços
+            </motion.h2>
+            <div className="card-container" id="content">
+              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 0.2 }}>
+                <Card
+                  title="KSM"
+                  description={
+                    <div className="text-hidden">
+                      <p>R$ 25 ⁰⁰</p>
+                      <p>O que vem neste serviço:</p>
+                      <ul className="list-disc pl-5 space-y-1">
+                        <li>Total de 12 pedras M+7</li>
+                        <li>Gear no fim da dungeon</li>
+                        <li>Gear no bau semanal</li>
+                        <li>Montaria da Season</li>
+                      </ul>
+                    </div>
+                  }
+                  imageUrl={cardImage.src}
+                />
+              </motion.div>
+              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 0.4 }}>
+                <Card
+                  title="M+ 10 S/T"
+                  description={
+                    <div className="text-hidden">
+                      <p>R$ 35 ⁰⁰</p>
+                      <p>O que vem neste serviço:</p>
+                      <ul className="list-disc pl-5 space-y-1">
+                        <li>Pedra M+10 feita no tempo</li>
+                        <li>Gear no fim da dungeon</li>
+                        <li>Gear no bau semanal</li>
+                        <li>Pontuação de M+ no RIO</li>
+                        <li>Teleporte para Dungeon</li>
+                      </ul>
+                    </div>
+                  }
+                  imageUrl={cardImage.src}
+                />
+              </motion.div>
+              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 0.6 }}>
+                <Card
+                  title="M+ 8"
+                  description={
+                    <div className="text-hidden">
+                      <p>R$ 13 ⁰⁰</p>
+                      <p>O que vem neste serviço:</p>
+                      <ul className="list-disc pl-5 space-y-1">
+                        <li>Pedra M+8 garantida</li>
+                        <li>Gear no fim da dungeon</li>
+                        <li>Gear no bau semanal</li>
+                        <li>Pontuação de M+ no RIO</li>
+                      </ul>
+                    </div>
+                  }
+                  imageUrl={cardImage.src}
+                />
+              </motion.div>
+            </div>
+          </div>
+        </section>
 
 
         {/* Seção Sobre Nós */}
-        <motion.div
-          id="about-us"
-          ref={aboutUsRef}
-          initial={{ x: 200, opacity: 0 }}
-          animate={{ x: hasAnimatedAboutUs ? 0 : 200, opacity: hasAnimatedAboutUs ? 1 : 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          <AboutUsSection />
-        </motion.div>
-
-        {/* Seção FAQ */}
-        <motion.div
-          id="faq"
-          ref={faqRef}
-          initial={{ x: -200, opacity: 0 }}
-          animate={{ x: hasAnimatedFAQ ? 0 : -200, opacity: hasAnimatedFAQ ? 1 : 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          <FAQSection />
-        </motion.div>
-
-        {/* Seção Contatos */}
-        <motion.section
-          id="contacts"
-          ref={contactsRef}
-          initial={{ x: -200, opacity: 0 }}
-          animate={{ x: hasAnimatedContacts ? 0 : -200, opacity: hasAnimatedContacts ? 1 : 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          <div className="contacts">
-            <h2 style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px' }}>
-              <FaRegAddressBook style={{ opacity: 0.5 }} />
-              Contatos
-            </h2>
-            <p>Entre em contato conosco pelos seguintes meios:</p>
-            <div className="contact-icons">
-              <a href="https://api.whatsapp.com/send?phone=557799237302" target="_blank" rel="noopener noreferrer">
-                <FaWhatsapp className="icones" color="lime" />
-                <span>WhatsApp</span>
-              </a>
-              <a href="https://discord.gg/pT3m2fDj34" target="_blank" rel="noopener noreferrer">
-                <FaDiscord className="icones" color="#00a5ff" />
-                <span>Discord</span>
-              </a>
-            </div>
+        <section className="section-bg about-bg" id="about-us">
+          <div className="bg-overlay">
+            <motion.div
+              ref={aboutUsRef}
+              initial={{ x: 200, opacity: 0 }}
+              animate={{ x: hasAnimatedAboutUs ? 0 : 200, opacity: hasAnimatedAboutUs ? 1 : 0 }}
+              transition={{ duration: 0.8 }}
+              style={{ width: '100%' }}
+            >
+              <AboutUsSection />
+            </motion.div>
           </div>
-        </motion.section>
+        </section>
+
+        {/* Seção FAQ e Contatos */}
+        <section className="section-bg faq-bg" id="faq">
+          <div className="bg-overlay">
+            <motion.div
+              ref={faqRef}
+              initial={{ x: -200, opacity: 0 }}
+              animate={{ x: hasAnimatedFAQ ? 0 : -200, opacity: hasAnimatedFAQ ? 1 : 0 }}
+              transition={{ duration: 0.8 }}
+              style={{ width: '100%' }}
+            >
+              <FAQSection />
+            </motion.div>
+
+            <motion.section
+              id="contacts"
+              ref={contactsRef}
+              initial={{ x: -200, opacity: 0 }}
+              animate={{ x: hasAnimatedContacts ? 0 : -200, opacity: hasAnimatedContacts ? 1 : 0 }}
+              transition={{ duration: 0.8 }}
+              style={{ width: '100%' }}
+            >
+              <div className="contacts">
+                <h2 style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px' }}>
+                  <FaRegAddressBook style={{ opacity: 0.5 }} />
+                  Contatos
+                </h2>
+                <p>Entre em contato conosco pelos seguintes meios:</p>
+                <div className="contact-icons">
+                  <a href="https://api.whatsapp.com/send?phone=557799237302" target="_blank" rel="noopener noreferrer">
+                    <FaWhatsapp className="icones" color="lime" />
+                    <span>WhatsApp</span>
+                  </a>
+                  <a href="https://discord.gg/pT3m2fDj34" target="_blank" rel="noopener noreferrer">
+                    <FaDiscord className="icones" color="#00a5ff" />
+                    <span>Discord</span>
+                  </a>
+                </div>
+              </div>
+            </motion.section>
+          </div>
+        </section>
       </div>
 
       {/* Footer */}

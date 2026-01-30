@@ -48,7 +48,7 @@
 .theater-mode-container {
   position: relative;
   width: 90%;
-  max-width: 1200px;
+  max-width: 1130px; /* Matches the total width of 3 cards (350px × 3) + gaps (2rem × 2 ≈ 80px) */
   margin: 0 auto 2rem auto;
   aspect-ratio: 21 / 9; /* Cinematic Aspect Ratio */
   border-radius: 12px;
